@@ -9,19 +9,19 @@
 	<div id="app"></div>
 	<script>
 		const root = document.getElementById('app');
-		const element = {
-		  type: "div",
+		const textElement = {
+		  type: "span",
 		  props: {
-		    id: "container",
 		    children: [
-		      { type: "input", props: { value: "foo", type: "text" } },
-		      { type: "a", props: { href: "/bar" } },
-		      { type: "span", props: {} }
+		      {
+		        type: "TEXT ELEMENT",
+		        props: { nodeValue: "Foo" }
+		      }
 		    ]
 		  }
 		};
 
-		render(element, root);
+		render(textElement, root);
 	</script>
 </body>
 </html>
