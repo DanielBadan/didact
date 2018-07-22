@@ -3,25 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Didact</title>
-	<script src="src/index.js"></script>
+	<script src="dist/didact.umd.js"></script>
 </head>
 <body>
-	<div id="app"></div>
-	<script>
-		const root = document.getElementById('app');
-		const textElement = {
-		  type: "span",
-		  props: {
-		    children: [
-		      {
-		        type: "TEXT ELEMENT",
-		        props: { nodeValue: "Foo" }
-		      }
-		    ]
-		  }
-		};
-
-		render(textElement, root);
-	</script>
+	<div id="root"></div>
+	
+	<script src="index-compiled.js"></script>
 </body>
 </html>

@@ -7,11 +7,11 @@ export function createElement(type, config, ...args) {
 
 	props.children = rawChildren
 		.filter(c => c != null && c!== false)
-		.map(c => c instanceOf Object ? c : createTextElement(c));
+		.map(c => c instanceof Object ? c : createTextElement(c));
 
 	return { type, props };
 }
 
 function createTextElement(value) {
-	return createElement(TEXT_ELEMENT, { node_value: value });
+	return createElement(TEXT_ELEMENT, { nodeValue: value });
 }

@@ -1,4 +1,4 @@
-function render(element, parentDom) {
+export function render(element, parentDom) {
 	const { type, props } = element;
 
 	// Create DOM elements
