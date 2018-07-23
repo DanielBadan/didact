@@ -1,11 +1,13 @@
 /** @jsx didact.createElement */
+const render = didact.render;
 
-const root = document.getElementById("root");
-const element = (
-  <div id="container">
-    <input value="bazss" type="text" />
-    <a href="/bar">bar</a>
-    <span onClick={e => alert("Hi")}>click me</span>
-  </div>
-);
-didact.render(element, root);
+const rootDom = document.getElementById("root");
+
+function tick() {
+  const time = new Date().toLocaleTimeString();
+  const clockElement = <h1 id={time}>{time}</h1>;
+  render(clockElement, rootDom);
+}
+
+tick();
+setInterval(tick, 1000);
