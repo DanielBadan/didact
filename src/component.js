@@ -7,9 +7,14 @@ export class Component {
 	}
 
 	setState(partialState) {
-		this.state = Object.assign({}, this.state, partialState);
-		updateInstance(this.__internalInstance);
+		sheduleUpdate(this, partialState);
 	}
+}
+
+function createInstance(fiber) {
+	const instance = new fiber.type(fiber.props);
+	instance.__fiber = fiber;
+	return instance;
 }
 
 export function createPublicInstance(element, internalInstance) {
